@@ -1,0 +1,6 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins";
+
+.explore__btn {
+    @include mixins.btn;
+}

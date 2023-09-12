@@ -1,0 +1,32 @@
+@keyframes spinner {
+    to {
+       transform: rotate(1turn);
+    }
+ }
+
+@keyframes container {
+   from {
+      transform: translateX(-9999px);
+   }
+   to {
+      transform: translateX(0);
+   }
+}
+
+@keyframes dots {
+   to {
+      clip-path: inset(0 -34% 0 0);
+   }
+}
+
+@keyframes menu-card {
+   from {
+      transform-origin: left;
+      transform: scalex(0);
+   }
+   to {
+      transform-origin: left;
+      transform: scalex(1.0);
+   }
+}
+ 

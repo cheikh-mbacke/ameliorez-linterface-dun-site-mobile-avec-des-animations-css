@@ -1,0 +1,28 @@
+@use "../utils/variables" as v; 
+@use "../utils/mixins";
+
+.search {
+    display: flex;
+    justify-content: center;
+    background-color: #EAEAEA;
+    &__location {
+        display: flex;
+        align-items: center;
+        min-height: 50px;
+        gap: 17px;
+        color: #353535;
+        & input {
+            border: none;
+            width: 108px;
+            background-color: #EAEAEA;
+            transition: transform 250ms ease-out;
+            &:focus {
+                outline: none;
+                border-radius: map-get(v.$border, small);
+                border: .5px solid #353535;
+                @include mixins.shadow;
+                transform: scale(1.1);
+            }
+        }
+    }
+}

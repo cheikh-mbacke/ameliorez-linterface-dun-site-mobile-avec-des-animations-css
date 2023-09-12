@@ -1,0 +1,23 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins";
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 634px;
+    &__title {
+        padding-bottom: 1rem;
+        &::after {           /* green underline */
+           @include mixins.underline;
+        }
+    }
+    &__card {       
+        @include mixins.menu__card;    /* menu elements will display progressively one after another */
+        &--10 {
+            animation-delay: 2s;
+            animation-fill-mode: backwards;
+        }
+    }   
+}

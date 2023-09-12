@@ -1,0 +1,13 @@
+@use "../utils/variables" as v;
+
+.explore {
+    text-align: center;
+    min-height: 300px;
+    padding: 4rem 0 6rem 0;
+    background-color: v.$bg-color;
+    &__text {
+        font-size: 1.8rem;
+        color: #353535;
+        font-weight: 300;
+    }
+}

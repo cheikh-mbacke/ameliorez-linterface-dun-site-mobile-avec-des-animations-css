@@ -1,0 +1,45 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins";
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: v.$desktop) {
+        max-width: 1100px;
+        margin: auto;
+        padding-left: 0;
+    }
+    &__container {
+        padding: 5rem 2rem 7rem 2rem;
+    }
+    &__list {
+        counter-reset: liste;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        padding-left: 1rem;
+        @media (min-width: v.$desktop) {
+            flex-direction: row;
+        }
+    }
+    &__element {
+        background-color: v.$bg-color;
+        @include mixins.shadow (0px 2px 4px 0px, v.$shadow-color, 0.15);
+        border-radius: map-get(v.$border, default)-5px;
+        padding-top: 2.6rem;
+        padding-bottom: 2.6rem;
+        position: relative;
+        &::before {
+            @include mixins.incrementation;  /* numbering the nav__bar elements */
+        }
+        @media (min-width: v.$desktop) {
+            width: 322px;
+        }
+    }
+    &__icon {
+        color: #7E7E7E;
+        margin-left: 3.4rem;
+        margin-right: 2rem;
+    }
+}
